@@ -14,3 +14,74 @@ a {
 * {
   box-sizing: border-box;
 }
+
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+ul.menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+ul.menu > li {
+  margin: 0 10px;
+}
+
+
+span.hamburger {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  ul.menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    padding: 10px;
+
+  }
+  ul.menu.opened {
+    display: block;
+  }
+  ul.menu > li {
+    margin: 10px 0;
+  }
+  span.hamburger {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 9999;}
+  }
+    
+span.hamburgerIcon {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: all 0.2s ease-in-out;
+}
+
+span.hamburgerIcon.active:nth-child(2) {
+  opacity: 0;
+  transform: translate(-20px, 0px);
+}
+
+.hamburgerIcon.active:nth-child(1) {
+  transform: translate(0px, 10px) rotate(45deg);
+}
+
+.hamburgerIcon.active:nth-child(3) {
+  transform: translate(0px, -10px) rotate(-45deg);
+} 

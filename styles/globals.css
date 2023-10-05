@@ -88,3 +88,7 @@ span.hamburgerIcon.active:nth-child(2) {
 .hamburgerIcon.active:nth-child(3) {
   transform: translate(0px, -10px) rotate(-45deg);
 } 
+
+body {
+  cursor: url(../public/cursor.png), pointer;
+}

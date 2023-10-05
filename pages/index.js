@@ -34,12 +34,12 @@ export default function Home() {
       </div>
       <div>
         <h2>Browse through our past events</h2>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '32px', margin: 'auto' }} >
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' , flexWrap: 'wrap', margin: 'auto' }} >
         {
-          [1, 2, 3, 4, 5, 6, 7, 8, 9].map(a => <div key={a} style={{ padding: '16px', border: '1px solid #333' }} >
+          [1, 2, 3, 4, 5, 6, ].map((a, i) => <div key={a} style={{ padding: '16px', background: ['cyan', 'magenta', 'pink', 'thistle', 'teal', 'turquoise', 'violet'][i % 7], placeContent: 'center', display: 'grid', placeContent:'center', gridColumn: (i == 2 || i == 8) && '1 / 3', gridRow: (i == 3 && '3 / 5') || (i == 6 && '5 / 7') }} >
             <img width='240px' src='https://lirp.cdn-website.com/ee739399/dms3rep/multi/opt/group-private-party-cc5eaa0a-640w.jpg' />
             <div style={{ width: '240px' }} >
-              <h3>Title of the event</h3>
+              <h3>{i}. Title of the event</h3>
               <p style={{ color: '#aaa' }} >Some details about the event like date and place, etc.</p>
             </div>
           </div>)

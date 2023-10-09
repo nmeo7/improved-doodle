@@ -1,10 +1,34 @@
-import { WebsiteLayout, styled } from 'neza-ui-library'
 import '../styles/globals.css'
 import * as THREE from 'three'
 import { useEffect, useState } from 'react'
 import logo from '../public/logo.png'
+import { styled } from 'styled-components'
 
 const menuItems = [ { label: 'Home', link: '/' }, { label: 'hello', link: '/hello' }, { label: 'FAQ', link: '#faq' }, { label: 'Contact HR', link: '#contact' } ]
+
+const Menu1 = styled.div`
+transform: rotate(90deg);
+width: 100vh; height: 64px; background: #dfe; position: fixed; 
+top: 0; left: 100%; transform-origin: left top; padding: 24px;
+display: flex;
+@media only screen and (max-width: 720px) {
+  transform: rotate(0);
+  width: 100%; height: 100%;
+  top: 0; left: 0; flex-direction: column; align-items: center;
+  display: none;
+  &.opened {
+    display: flex;
+  }
+}
+`
+
+const Spacer = styled.div`
+display: none;
+@media only screen and (max-width: 720px) {
+  flex: 3;
+  display: block;  
+}
+`
 
 const MyApp = ({ Component, pageProps }) => {
 
@@ -58,12 +82,14 @@ const MyApp = ({ Component, pageProps }) => {
         <li style={{ listStyle: 'none' }} >ABOUT</li>
       </ul>
     </div> */}
-    <div style={{ transform: 'rotate(90deg)', width: '100vh', height: '64px', background: '#dfe', position: 'fixed',top: '0', left: '100%', transformOrigin: 'left top', display: 'flex', padding: '24px' }} >
+    <Menu1 className={`menu ${opened ? ' opened' : ''}`}  >
+      <Spacer />
       <div style={{ flex: '1' }} >EVENTS</div>
       <div style={{ flex: '1' }} >ABOUT</div>
       <div style={{ flex: '1' }} >BOOKING</div>
       <div style={{  }} >Socials</div>
-    </div>
+      <Spacer />
+    </Menu1>
     <span className='hamburger' onClick={handleToggle}>
           <span className={`hamburgerIcon ${opened ? ' active' : ''}`} />
           <span className={`hamburgerIcon ${opened ? ' active' : ''}`} />

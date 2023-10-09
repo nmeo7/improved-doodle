@@ -28,10 +28,6 @@ export default function Home() {
           <p style={{ textAlign: 'center' }}>Women Deliver</p>
         </div>
       </div>
-      <div style={{ display: 'flex', height: '320px', alignItems: 'center', margin: '32px 64px', width: '960px', margin: 'auto' }} >
-        <h2 style={{ flex: '1' }} >Book a Session</h2>
-        <img src={'https://paintandsipstudios.com.au/storage/2020/06/Finished-Logo-JPG.png'} height='320px' />
-      </div>
       <div>
         <h2>Browse through our past events</h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' , flexWrap: 'wrap', margin: 'auto' }} >
@@ -45,6 +41,10 @@ export default function Home() {
           </div>)
         }
         </div>
+      </div>
+      <div style={{ display: 'flex', height: '320px', alignItems: 'center', margin: '32px 64px', width: '960px', margin: 'auto' }} >
+        <h2 style={{ flex: '1' }} >Book a Session</h2>
+        <img src={'https://paintandsipstudios.com.au/storage/2020/06/Finished-Logo-JPG.png'} height='320px' />
       </div>
     </div>
   )

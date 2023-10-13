@@ -3,6 +3,7 @@ import * as THREE from 'three'
 import { useEffect, useState } from 'react'
 import logo from '../public/logo.png'
 import { styled } from 'styled-components'
+import Image from 'next/image'
 
 const menuItems = [ { label: 'Home', link: '/' }, { label: 'hello', link: '/hello' }, { label: 'FAQ', link: '#faq' }, { label: 'Contact HR', link: '#contact' } ]
 
@@ -71,7 +72,7 @@ const MyApp = ({ Component, pageProps }) => {
     </Menu> */}
     <div style={{ position: 'fixed', width: '100%', height: '100vh', overflowY: 'auto' }} >
     <div style={{  textAlign: 'center', paddingTop: '32px' }} >
-      <img src={logo?.src} />
+      <Image src={logo} />
     </div>
     {/* <div style={{ display: 'grid', placeContent: 'center', padding: '32px' }} >
       <ul className={`menu ${opened ? ' opened' : ''}`} style={{ fontSize: '16px', textDecoration: 'none', margin: 'auto' }} >
